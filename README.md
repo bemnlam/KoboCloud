@@ -1,5 +1,5 @@
-# KoboCloud
-A set of scripts to synchronize a kobo reader with popular cloud services.
+# KoboCloud Mod
+A set of scripts to synchronize a kobo reader with popular cloud services, forked from [KoboCloud](https://github.com/fsantini/KoboCloud).
 
 The following cloud services are supported:
 
@@ -8,6 +8,11 @@ The following cloud services are supported:
 - NextCloud/OwnCloud
 - pCloud
 
+And it is able to upload your `KoboReader.sqlite` to:
+
+- Dropbox
+
+This `sqlite` file can then be loaded by [Kobo Note Reader](https://gitlab.com/bemnlam/kobo-note-reader) and read/share the notes.
 
 ## Installation
 
@@ -59,13 +64,32 @@ Notice: No subdirectories are supported at the moment. Your books must be all in
 
 Restart your Kobo after making changes to kobocloudrc to make them effective.
 
-### Dropbox
+### Dropbox (download)
 
 To add a Dropbox link:
 
 - Open your dropbox in a browser
 - Select the folder that you want to share and click "Share" and "Send link"
 - Copy the link that appears into the kobocloudrc file
+
+### Dropbox (upload `KoboReader.sqlite` to remote Dropbox app)
+
+You need to create a dropbox app and generate a auth token:
+
+- Go to Dropbox App Console: https://www.dropbox.com/developers/apps
+- Click "Create app"
+- Choose "Scoped access" and access the "App folder"
+- Name your app
+
+The app will then be created. Go to the details of the app:
+
+- In "Permission" tab, check all items under "Files and folders"
+- In "Settings" tab > "OAuth 2", click "Generate" to get the token.
+
+Addd this line to the config file:
+```
+Bearer {the dropbox token}
+```
 
 
 ### Google Drive
