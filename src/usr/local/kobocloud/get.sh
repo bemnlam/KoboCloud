@@ -40,6 +40,8 @@ while read url; do
       $KC_HOME/getpCloudFiles.sh "$url" "$Lib"
     elif echo $url | grep -q '^https*://drive.google.com'; then
       $KC_HOME/getGDriveFiles.sh "$url" "$Lib"
+    elif echo $url | grep -q '^Bearer '; then # dropbox app auth token
+      $KC_HOME/putDropboxFiles.sh "$url"
     else
       $KC_HOME/getOwncloudFiles.sh "$url" "$Lib"
     fi

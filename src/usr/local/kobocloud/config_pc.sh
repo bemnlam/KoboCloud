@@ -1,4 +1,5 @@
 #!/bin/sh
+DB=/tmp/kobo
 Logs=/tmp/KoboCloud
 Lib=/tmp/KoboCloud/Library
 SD=/tmp/KoboCloud/sd

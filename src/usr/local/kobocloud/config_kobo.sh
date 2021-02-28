@@ -1,4 +1,5 @@
 #!/bin/sh
+DB=/mnt/onboard/.kobo
 Logs=/mnt/onboard/.add/kobocloud
 Lib=/mnt/onboard/.add/kobocloud/Library
 SD=/mnt/sd/kobocloud
